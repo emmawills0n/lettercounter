@@ -23,14 +23,21 @@ int main()
 
   // request and read in the string from the user
   printf("Enter text for analysis: ");
-  while ( ((input = getchar()) != '\n' ) && (i < (BUFFER_SIZE - 1))) {
+<<<<<<< HEAD
+  while ( ((input = getchar()) != '\n') && (i < (BUFFER_SIZE - 1))) {
+=======
+  while ( ((input = getchar()) != '\n') && (i < (BUFFER_SIZE - 1))) {
+>>>>>>> feature
     buffer[i++] = input;
   }
   buffer[i] = '\0';
 
   // set the letter counts to zero
   for (i = 0; i < COUNT_SIZE; i++) count[i] = 0;
+<<<<<<< HEAD
 
+=======
+>>>>>>> feature
   // Count the occurences of each letter a-z in the string (case insenstive)
   // in the count array with count[0] for 'a', count[1] for 'b' and so on.
   // We ensure the character being examined is an uppercase character with
@@ -53,14 +60,21 @@ int main()
                                (((float) count[i]) / strlen(buffer)) * 100);
   }
   // Output the number of other characters
-  printf("%-10s%-15d%-15.2f\n","Spaces",
+<<<<<<< HEAD
+  printf("%-10s%-15d%-15.2f\n", "Spaces",
                               spaces,
                               (((float) spaces) / strlen(buffer)) * 100);
+=======
+  printf("%-10s%-15d%-15.2f\n", "Spaces",
+		  		spaces,
+				(((float) spaces) / strlen(buffer)) * 100);
+>>>>>>> feature
 
   // Find the max and min occuring character in the string, in particular the
   // position in the count array of each character
   int max_pos = max(count);
   int min_pos = min(count);
+<<<<<<< HEAD
 
   // Output the max and min occuring letter, again using 65 as an offset to
   // output the character character given ASCII A-Z range from 65-90
@@ -71,6 +85,20 @@ int main()
 }
 
 // Returns the position in array count of the associated letter that
+=======
+  
+  // Output the max and min occuring character, again using 65 as an offset to
+  // output the character character given ASCII A-Z range from 65-90
+  printf("\nThe most frequently occurring character is %c.\n",
+         max_pos + 65);
+  printf("The least frequently occurring character is %c.\n",
+         min_pos + 65);
+
+  return 0 ;
+}
+
+// Returns the position in array count of the associated letter that 
+>>>>>>> feature
 // occurred the maximum number of times
 int max(int count[])
 {
@@ -82,11 +110,19 @@ int max(int count[])
       max_pos = i;
       max = count[i];
     }
+<<<<<<< HEAD
   }
   return max_pos;
 }
 
 // Returns the position in array count of the associated letter that
+=======
+  }  
+  return max_pos;
+}
+
+// Returns the position in array count of the associated letter that 
+>>>>>>> feature
 // occurred the minimum number of times
 int min(int count[])
 {
@@ -98,6 +134,10 @@ int min(int count[])
       min_pos = i;
       min = count[i];
     }
+<<<<<<< HEAD
   }
+=======
+  }  
+>>>>>>> feature
   return min_pos;
 }
